@@ -1,5 +1,14 @@
 language: java
 jdk:
-  - oraclejdk8
+- oraclejdk8
 after_success:
-  - mvn cobertura:cobertura coveralls:report
+- mvn cobertura:cobertura coveralls:report
+deploy:
+  provider: openshift
+  user: bi-@freemail.hu
+  password:
+    secure: fGdbX+wX1z7bDMWPBXjL2jeVWYpw28eXj7ACt0by6fkMNQpSAsL6gFR5i6URbXUrJLOb26uWokurMRUo00LtPD5l1WIqHX+K5H2ZjUAVIJ/tN2ymThH1xaq+dODtn400MuK5Rh9+Jy5K6QgN4YCUTz0wcguJhYbUY8HB0TS8868D5OgMc0QHoBgnlJ5iMLkqXb6QkFt5HZUrcUjD0/i759fOvoplWDE3qwhHlCIMt9u+SZ6PcY8qcVwjQqdpOkPAbQevGcZrkA4g9gQ1hlWdFfT01zqvXqHj2qgzOTPXEJiJrJRjPCbafaFH9Cfws1hetVhL0ysn3q82b2AQ26vYkobWKSYX6CmxybpOgF6INQsfsfD0PVcLJGy1nihhr8pm0iAPD3C5nBJZahHSxgIlyttqfgmRmFhCnKYSy7OePXsJe6/xQbJnseQAYh48UtbXFmGn9JOhjJb13dElsyzZKdS1rBnXMNz4Oy1ryQqt8Jk1e9bPnBkuxhcz6dcmqYlqfBNojI6eo2QXGyFrogIWG54VXiRP1526JTsMvcD6w5hp47C4gUCVr3FzWGqCzjNztXaecXVr1ptSRGxkS8lcViiNZV6o77Z5IviADt+3n2BIIDSgZ17OVhsSFGNRxyQW3oYkbQuvL7bhgvny1Q/R489xejkwiGLTItYKIc9GymY=
+  app: dwi
+  domain: ''
+  on:
+    repo: bi-/dwi
