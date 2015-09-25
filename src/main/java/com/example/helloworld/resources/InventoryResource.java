@@ -1,10 +1,10 @@
 package com.example.helloworld.resources;
 
+import com.codahale.metrics.annotation.Timed;
 import com.example.helloworld.core.Inventory;
 import com.example.helloworld.core.TransferResult;
-import com.example.helloworld.db.InventoryDao;
+import com.example.helloworld.db.InventoryDAO;
 import com.google.common.base.Optional;
-import com.codahale.metrics.annotation.Timed;
 import io.dropwizard.hibernate.UnitOfWork;
 
 import javax.ws.rs.*;
@@ -16,10 +16,10 @@ import java.util.List;
 @Produces(MediaType.APPLICATION_JSON)
 public class InventoryResource {
 
-    private final InventoryDao peopleDAO;
+    private final InventoryDAO inventoryDAO;
 
-    public InventoryResource(InventoryDao dao) {
-        this.peopleDAO = dao;
+    public InventoryResource(InventoryDAO dao) {
+        this.inventoryDAO = dao;
     }
 
     @UnitOfWork
@@ -34,7 +34,7 @@ public class InventoryResource {
             return new TransferResult( -1, new Inventory());
         }
 
-        final List<Inventory> result = peopleDAO.findByInventory(equipment.get());
+        final List<Inventory> result = inventoryDAO.findByInventory(equipment.get());
         if (result.size() > 0 ) {
             Inventory inventory = result.get(0);
             if (inventory.getEmployee().equals(deliverer.get())) {
@@ -51,7 +51,7 @@ public class InventoryResource {
     @GET
     @Timed
     public List<TransferResult> listAll() {
-        List<Inventory> result = peopleDAO.findAll();
+        List<Inventory> result = inventoryDAO.findAll();
         List<TransferResult> tr = new ArrayList<>();
         for (Inventory i : result) {
             tr.add(new TransferResult(0,i));
