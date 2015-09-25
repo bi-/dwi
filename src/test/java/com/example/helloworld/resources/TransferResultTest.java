@@ -16,9 +16,6 @@ public class TransferResultTest {
     @Test
     public void serializesToJSON() throws Exception {
         final Inventory inventory = new Inventory();
-//        inventory.setEmployee("Peter");
-//        inventory.setInventory("2009630062");
-//        inventory.setInventoryDescr("NB0660SD");
         final TransferResult tr = new TransferResult(-2, inventory);
 
         final String expected = MAPPER.writeValueAsString(
