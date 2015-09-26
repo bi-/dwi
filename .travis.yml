@@ -13,3 +13,4 @@ deploy:
   domain: balassai
   on:
     repo: bi-/dwi
+  skip_cleanup: true
