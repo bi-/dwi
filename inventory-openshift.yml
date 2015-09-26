@@ -46,6 +46,10 @@ viewRendererConfiguration:
 #  connector:
 #    type: http
 #    port: 8080
-http:
+server:
+  type: simple
+  connector:
+    type: http
     bindHost: @OPENSHIFT_DIY_IP@
-    adminPort: @OPENSHIFT_DIY_PORT@
+    port: @OPENSHIFT_DIY_PORT@
+
