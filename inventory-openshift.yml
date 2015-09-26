@@ -13,7 +13,7 @@ database:
   password: @OPENSHIFT_POSTGRESQL_DB_PASSWORD@
 
   # the JDBC URL
-  url: jdbc:postgresql://@OPENSHIFT_POSTGRESQL_DB_HOST@/@OPENSHIFT_POSTGRESQL_DB_NAME@
+  url: jdbc:postgresql://@OPENSHIFT_POSTGRESQL_DB_HOST@/@PGDATABASE@
 
   # any properties specific to your JDBC driver:
   properties:
