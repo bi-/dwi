@@ -7,19 +7,19 @@ database:
   driverClass: org.postgresql.Driver
 
   # the username
-  user: postgres
+  user: @OPENSHIFT_POSTGRESQL_DB_USERNAME@
 
   # the password
-  password: postgres
+  password: @OPENSHIFT_POSTGRESQL_DB_PASSWORD@
 
   # the JDBC URL
-  url: jdbc:postgresql://localhost/junk
+  url: jdbc:postgresql://@OPENSHIFT_POSTGRESQL_DB_HOST@/@OPENSHIFT_POSTGRESQL_DB_PORT@
 
   # any properties specific to your JDBC driver:
   properties:
     charSet: UTF-8
     hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
-
+    hibernate.hbm2ddl.auto: create
   # the maximum amount of time to wait on an empty pool before throwing an exception
   maxWaitForConnection: 1s
 
