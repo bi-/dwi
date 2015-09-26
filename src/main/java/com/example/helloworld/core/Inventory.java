@@ -16,7 +16,15 @@ import javax.persistence.*;
 @Entity
 @Table(name = "a")
 public class Inventory {
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    @JsonProperty
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;

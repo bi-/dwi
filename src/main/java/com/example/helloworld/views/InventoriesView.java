@@ -3,12 +3,14 @@ package com.example.helloworld.views;
 import com.example.helloworld.core.Inventory;
 import io.dropwizard.views.View;
 
-public class InventoryView extends View {
-    private final Inventory inventory;
+import java.util.List;
+
+public class InventoriesView extends View {
+    private final List<Inventory> inventories;
 
     public enum Template {
-        FREEMARKER("freemarker/inventory.ftl"),
-        MUSTACHE("mustache/inventory.mustache");
+        FREEMARKER("freemarker/inventories.ftl"),
+        MUSTACHE("mustache/inventories.mustache");
 
         private String templateName;
 
@@ -21,12 +23,12 @@ public class InventoryView extends View {
         }
     }
 
-    public InventoryView(Template template, Inventory inventory) {
+    public InventoriesView(Template template, List<Inventory> inventories) {
         super(template.getTemplateName());
-        this.inventory = inventory;
+        this.inventories = inventories;
     }
 
-    public Inventory getInventory() {
-        return inventory;
+    public List<Inventory> getInventories() {
+        return inventories;
     }
 }
