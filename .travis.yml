@@ -3,3 +3,13 @@ jdk:
   - oraclejdk8
 after_success:
   - mvn cobertura:cobertura coveralls:report
+
+deploy:
+  provider: openshift
+  user: bi-@freemail.hu
+  password:
+    secure: LvPlDxDy2MkdDy5gN5bMkpRoyHhu2ilwtBHo+naVeB3FWdim6PY4T+YmuowcjSm2Fp92h4Jah1DDkRQr7fRkRs0oZfXzel7s0biExAQcXNHOCNRRcE63b4EXHp7DKfgOGwqIck78O16y7N6yLZ2kl0i7z1+tuIQsQ+A/oaziAxczuRqXm3mLX8A8tZXgsj8A3oGQUjmJ22tfcBv3UpyeuhURiDdclcEwR0rCf7muQg2Q/EKj3GAaXzPLdInvGAB8uBVpv2fdiCy61vh64TyimB+MdUZuUIN/tK4NKs2vdxcJnW/zOS52RJXSIYy/Ef3EPynKULgsSYWnWFkgWM7XlFIA4mTplbUXjlA04sc5B/nVbXPWb4vM+SE+4r6po2alPNXISQKixH1Nobmb3u3yShGRIAoi8RWXnt+uPY73Oy0TUwRW7BEgOghy05TeR95XVccirWJqpQ3OVmiXuQ0zv8d6cAm2cKL0ta5o5P5WZtEdyrzljkRlgicpT8SXH8jPMfl2Tl7nlhrsGclhlgF/FHJ4nkVXSDjb1KQaGUGGe1ZGrv5Y0PCSkZBWP3t3s2I5Gn5VXU0M8F/GjQIDoInAFGC08VaeI7uNmdRN/WqaE2yXFG1iIZoheHJ6u70CPBrSYUYTZ3QQmDrBa6GFn3fapKC695hLCkOALBQvGNoFFLU=
+  app: diy
+  domain: balassai
+  on:
+    repo: bi-/dwi
