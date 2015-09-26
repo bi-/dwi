@@ -6,6 +6,4 @@ sed -i 's/@OPENSHIFT_DIY_PORT@/'"$OPENSHIFT_DIY_PORT"'/g' inventory-openshift.ym
 sed -i 's/@OPENSHIFT_POSTGRESQL_DB_USERNAME@/'"$OPENSHIFT_POSTGRESQL_DB_USERNAME"'/g' inventory-openshift.yml
 sed -i 's/@OPENSHIFT_POSTGRESQL_DB_PASSWORD@/'"$OPENSHIFT_POSTGRESQL_DB_PASSWORD"'/g' inventory-openshift.yml
 
-
-sed -i 's/@OPENSHIFT_POSTGRESQL_DB_HOST@/'"$OPENSHIFT_POSTGRESQL_DB_HOST"'/g' inventory-openshift.yml
-sed -i 's/@OPENSHIFT_POSTGRESQL_DB_PORT@/'"$OPENSHIFT_POSTGRESQL_DB_PORT"'/g' inventory-openshift.yml
+sed -i 's/@OPENSHIFT_POSTGRESQL_DB_URL@/'"$OPENSHIFT_POSTGRESQL_DB_URL"'/g' inventory-openshift.yml
