@@ -44,10 +44,7 @@ public class InventoryApplication extends Application<InventoryConfiguration> {
     public void run(InventoryConfiguration configuration,
                     Environment environment) {
         final InventoryDAO inventoryDAO = new InventoryDAO(hibernate.getSessionFactory());
-
-        final InventoryResource resource = new InventoryResource(
-                inventoryDAO
-        );
+        final InventoryResource resource = new InventoryResource(inventoryDAO);
         environment.jersey().register(resource);
     }
 
